@@ -1,11 +1,11 @@
 {
-  "version": "0.1.0",
-  "notes": "v0.1.0初始化测试",
-  "pub_date": "2025-08-04T22:42:00+08:00",
+  "version": "0.1.1",
+  "notes": "v0.1.1增加查看版本功能",
+  "pub_date": "2025-08-04T23:27:00+08:00",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUWVFHRmVUclk1dDNIbk5xTW51Q05oUExDS0ZqR3BKcHlsVFhkR1FoVytDMUd6UCtBMFRDWCtFcStIY1lXWVM5L2p4UU5KL3BrZHZ1bzZ6NVNhV2x1TVBWRHZlWTlhWFFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzU0MzE3ODg4CWZpbGU6dG9sYm94XzAuMS4wX3g2NF9lbi1VUy5tc2kKK0tDTEdrdGIrZFNXZXN1aVg0RTRWWlpUQjcyWlc4WXkzOGpuWlJPWDBYT0J1UmZOYmlCaDdwR0NydzlMc0tKSkk0aTIyL2VtLzZ3TlJtTXJFZWpaRGc9PQo=",
-      "url": "https://github.com/JaSo-Naw/tolbox/releases/download/v0.1.0/tolbox_0.1.0_x64_en-US.msi"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUWVFHRmVUclk1dDI2cGpUN3VBa3o5S3lxaHpiL3hBeG00dkxFQ21qWmRVV0txQjFlM3Flbkp2cC9Nbm4xc2ZHSVN3eHB1TW5iNWNWWmg5MisyQVplK0o0QlpnSmhxV3dFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzU0MzIwNjAxCWZpbGU6dG9sYm94XzAuMS4xX3g2NF9lbi1VUy5tc2kKZDdoRkRpNXpGeVp1WGkvbzFjUmNYVHNzNFRnNjNDY1c1czg1a3d5ZnJKd2FISEt1aGk1dUpUcEhQU08xOVQraUhTbU5EcDJPemVqRTJTRDZIOEI0QkE9PQo=",
+      "url": "https://github.com/JaSo-Naw/tolbox/releases/download/v0.1.1/tolbox_0.1.1_x64_en-US.msi"
     }
   }
 }
