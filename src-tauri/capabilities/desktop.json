@@ -1,14 +1,17 @@
 {
   "identifier": "desktop-capability",
+  "description": "Allow to use desktop api in these windows",
+  "local": true,
   "platforms": [
     "macOS",
     "windows",
     "linux"
   ],
   "windows": [
-    "main"
+    "main","login"
   ],
   "permissions": [
     "updater:default"
   ]
 }
+

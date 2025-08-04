@@ -1,5 +1,6 @@
 <template>
   <router-view></router-view>
+  <UpdateOverlay />
 </template>
 
 <script setup>
@@ -8,6 +9,7 @@
 import {invoke} from "@tauri-apps/api/core";
 
 import {getOrInitAutoStart} from "@/db/modules/autostart.js";
+import UpdateOverlay from "@/components/common/UpdateOverlay.vue";
 
 async function initAutostart() {
   try {

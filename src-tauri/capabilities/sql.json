@@ -4,11 +4,13 @@
   "description": "Allow to use sql api in these windows",
   "local": true,
   "windows": [
-    "main","login"
+    "main",
+    "login"
   ],
   "permissions": [
     "sql:allow-load",
     "sql:default",
-    "sql:allow-execute"
+    "sql:allow-execute",
+    "process:default"
   ]
 }

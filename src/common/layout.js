@@ -45,14 +45,6 @@ export const settingItem = [
                 }
             },
             {
-                id: 'update',
-                text: '检查更新',
-                action: () => {
-                    //todo
-                    ElMessage.error("检查更新未实现")
-                }
-            },
-            {
                 id: 'autoStart',
                 text: '自启动',
                 action: async () => {
