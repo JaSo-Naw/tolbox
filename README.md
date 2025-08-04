@@ -1,1 +1,1 @@
-gh-pages for updater
+page for tolbox update
