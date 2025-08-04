@@ -1,0 +1,12 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "fs",
+  "description": "Allow to use fs api in these windows",
+  "local": true,
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    "fs:default"
+  ]
+}

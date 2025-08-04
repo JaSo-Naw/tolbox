@@ -1,0 +1,12 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "dialog",
+  "description": "Allow to use dialog api in these windows",
+  "local": true,
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    "dialog:default"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "DEFAULT Capability for the these windows",
+  "local": true,
+  "windows": [
+    "login", "main"
+  ],
+  "permissions": [
+    "core:default",
+    "opener:default"
+  ]
+}
