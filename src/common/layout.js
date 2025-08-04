@@ -2,10 +2,12 @@
 
 import {getCurrentWindow} from "@tauri-apps/api/window";
 import {ElMessage} from "element-plus";
-const appWindow = getCurrentWindow()
+import { getVersion } from "@tauri-apps/api/app"
 import { invoke } from "@tauri-apps/api/core";
 import {getOrInitAutoStart, setAutoStart} from "@/db/modules/autostart.js";
 import {clearSecretKey} from "@/db/modules/user.js";
+
+const appWindow = getCurrentWindow()
 
 export const mainNav = [
     { id: 'home', text: '首页', icon: 'home' },
@@ -42,6 +44,15 @@ export const settingItem = [
                 action: () => {
                     //todo
                     ElMessage.error("快捷键未实现")
+                }
+            },
+            {
+                id: 'getVersion',
+                text: '当前版本',
+                action: async () => {
+                    const version = await getVersion()
+                    console.log(version)
+                    ElMessage.success("当前版本: " + version)
                 }
             },
             {
@@ -101,19 +112,19 @@ export const settingItem = [
                 }
             },
             {
+                id: 'close',
+                text: '关闭',
+                action: async () => {
+                    await appWindow.close()
+                }
+            },
+            {
                 id: 'alwaysOnTop',
                 text: '窗口置顶',
                 action: async () => {
                     const isAlwaysOnTop = await appWindow.isAlwaysOnTop()
                     await appWindow.setAlwaysOnTop(!isAlwaysOnTop)
                     ElMessage.success("当前窗口置顶状态：" + (isAlwaysOnTop ? "关闭" : "开启"))
-                }
-            },
-            {
-                id: 'close',
-                text: '关闭',
-                action: async () => {
-                    await appWindow.close()
                 }
             }
         ]
