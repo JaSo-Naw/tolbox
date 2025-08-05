@@ -1,7 +1,7 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "tolbox",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "identifier": "com.tolbox.app",
   "build": {
     "beforeDevCommand": "npm run dev",
@@ -34,6 +34,7 @@
     "updater": {
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEI3MzlCNjRFNUU2MTQwRDgKUldUWVFHRmVUclk1dHl3VTBEbUp6ZGkzRmdjTzlJMExBZ0R2LzhxTTVDazhjbEJWZkxtc0NSUWwK",
       "endpoints": [
+        "https://raw.githubusercontent.com/JaSo-Naw/tolbox/refs/heads/pages/latest.json",
         "https://raw.githubusercontent.com/JaSo-Naw/tolbox/pages/latest.json"
       ],
       "windows": {

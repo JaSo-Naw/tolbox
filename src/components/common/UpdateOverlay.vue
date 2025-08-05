@@ -23,7 +23,7 @@
 import { ref, onMounted } from "vue"
 import { check } from "@tauri-apps/plugin-updater"
 import { relaunch } from "@tauri-apps/plugin-process"
-import { ElIcon } from "element-plus"
+import {ElIcon, ElMessage} from "element-plus"
 import { Loading } from "@element-plus/icons-vue"
 
 const show = ref(false)
@@ -31,36 +31,56 @@ const progress = ref(0)
 const finished = ref(false)
 
 async function checkUpdate() {
-  const update = await check()
 
-  if (update) {
-    show.value = true
-    progress.value = 0
-    let downloaded = 0
-    let contentLength = 0
+  let update = null;
 
-
-    await update.downloadAndInstall(event => {
-      switch (event.event) {
-        case "Started":
-          contentLength = event.data.contentLength
-          progress.value = 0
-          break
-        case "Progress":
-          downloaded += event.data.chunkLength
-          if (contentLength > 0) {
-            progress.value = Math.min(100, Math.round((downloaded / contentLength) * 100))
-          }
-          break
-        case "Finished":
-          progress.value = 100
-          finished.value = true
-          break
-      }
-    })
-
-    await relaunch()
+  try {
+    update = await check()
+  }catch (e) {
+    update = null
   }
+
+    if (update) {
+      show.value = true
+      progress.value = 0
+      let downloaded = 0
+      let contentLength = 0
+
+      try {
+        await update.downloadAndInstall(event => {
+          switch (event.event) {
+            case "Started":
+              contentLength = event.data.contentLength
+              progress.value = 0
+              break
+            case "Progress":
+              downloaded += event.data.chunkLength
+              if (contentLength > 0) {
+                progress.value = Math.min(100, Math.round((downloaded / contentLength) * 100))
+              }
+              break
+            case "Finished":
+              progress.value = 100
+              finished.value = true
+              break
+          }
+        })
+
+        try {
+          await relaunch()
+        }catch (e){
+          show.value = false
+        }
+
+      }catch (e) {
+        show.value = false
+      }finally {
+        show.value = false
+      }
+
+    }
+
+
 }
 
 onMounted(() => {
