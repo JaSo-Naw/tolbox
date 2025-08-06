@@ -1,6 +1,9 @@
 <template>
-  <router-view></router-view>
-  <UpdateOverlay />
+  <ContextMenu>
+    <router-view></router-view>
+    <UpdateOverlay />
+  </ContextMenu>
+
 </template>
 
 <script setup>
@@ -10,6 +13,8 @@ import {invoke} from "@tauri-apps/api/core";
 
 import {getOrInitAutoStart} from "@/db/modules/autostart.js";
 import UpdateOverlay from "@/components/common/UpdateOverlay.vue";
+
+import ContextMenu from "@/components/common/ContextMenu.vue";
 
 async function initAutostart() {
   try {

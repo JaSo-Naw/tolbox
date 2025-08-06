@@ -22,7 +22,7 @@
           </el-icon>
           <span>正在翻译...</span>
         </div>
-        <pre v-else class="input-value">{{ result || "翻译结果将在这里显示" }}</pre>
+        <pre v-else class="input-value CONTEXT_MENU_ALLOWED">{{ result || "翻译结果将在这里显示" }}</pre>
       </div>
     </div>
     <!-- 操作按钮 -->

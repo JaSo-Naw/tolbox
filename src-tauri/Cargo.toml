@@ -1,6 +1,6 @@
 [package]
 name = "tolbox"
-version = "0.1.2"
+version = "0.1.3"
 description = "Tolbox is a tool storage box."
 authors = ["jaso"]
 edition = "2024"
