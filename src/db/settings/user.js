@@ -1,4 +1,4 @@
-import {getOrInitSetting, getSetting, setSetting} from "@/db/index.js";
+import {getOrInitSetting, getSetting, setSetting} from "@/db/settings/index.js";
 
 
 export const getSecretKey = async () => {

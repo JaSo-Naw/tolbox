@@ -4,8 +4,8 @@ import {getCurrentWindow} from "@tauri-apps/api/window";
 import {ElMessage} from "element-plus";
 import { getVersion } from "@tauri-apps/api/app"
 import { invoke } from "@tauri-apps/api/core";
-import {getOrInitAutoStart, setAutoStart} from "@/db/modules/autostart.js";
-import {clearSecretKey} from "@/db/modules/user.js";
+import {getOrInitAutoStart, setAutoStart} from "@/db/settings/autostart.js";
+import {clearSecretKey} from "@/db/settings/user.js";
 
 const appWindow = getCurrentWindow()
 
@@ -23,6 +23,7 @@ export const subNav = {
         { id: 'devices', text: '设备', icon: 'device' }
     ],
     tool: [
+        { id: 'quickOpen', text: '快速打开', icon: 'quickOpen'},
         { id: 'translate', text: '翻译', icon: 'translate'},
         { id: 'tido', text: 'todo', icon: 'tido' },
         { id: 'ai', text: 'AI', icon: 'ai' },

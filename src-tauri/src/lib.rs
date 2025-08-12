@@ -3,10 +3,12 @@ mod code_feeder;
 mod get_by_bilibili;
 mod tolbox_window;
 mod translate;
+mod quick_open;
 
 use tauri::Manager;
 use tauri_plugin_autostart::MacosLauncher;
 use tauri_plugin_sql::{Migration, MigrationKind};
+use tauri::Emitter;
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
@@ -60,7 +62,8 @@ pub fn run() {
             translate::translate_sentence,
             get_by_bilibili::download_bilibili,
             tolbox_window::create_main_window,
-            tolbox_window::create_login_window
+            tolbox_window::create_login_window,
+            quick_open::quick_open
         ])
         .setup(|app| {
             // 登录窗口
@@ -77,8 +80,10 @@ pub fn run() {
                 .build()?;
 
             //系统托盘
+            let menu_item_separator = tauri::menu::PredefinedMenuItem::separator(app)?;
+            let menu_item_quick_open = tauri::menu::MenuItem::with_id(app, "quickOpen", "快速启动", true, None::<&str>)?;
             let menu_item_quit = tauri::menu::MenuItem::with_id(app, "quit", "关闭", true, None::<&str>)?;
-            let menu = tauri::menu::Menu::with_items(app, &[&menu_item_quit])?;
+            let menu = tauri::menu::Menu::with_items(app, &[&menu_item_quick_open, &menu_item_separator, &menu_item_quit])?;
 
             tauri::tray::TrayIconBuilder::new()
                 .icon(app.default_window_icon().unwrap().clone())
@@ -89,6 +94,19 @@ pub fn run() {
                 .on_menu_event(|app,event| match event.id.as_ref() {
                     "quit" => {
                         app.exit(0);
+                    }
+                    "quickOpen" => {
+                        if let Some(window) = app.get_webview_window("main") {
+                            let _ = window.unminimize(); // 解除最小化
+                            let _ = window.show();      // 确保窗口显示
+                            let _ = window.set_focus(); // 聚焦窗口
+                            // 通知前端进行路由跳转
+                            let _ = window.emit("navigate-to", "quickOpen");
+                        } else if let Some(window) = app.get_webview_window("login") {
+                            let _ = window.unminimize();
+                            let _ = window.show();
+                            let _ = window.set_focus();
+                        }
                     }
                     _ => {}
                 })

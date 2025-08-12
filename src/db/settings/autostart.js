@@ -1,4 +1,4 @@
-import {getOrInitSetting, setSetting} from "@/db/index.js";
+import {getOrInitSetting, setSetting} from "@/db/settings/index.js";
 
 export const getOrInitAutoStart = async () => {
    return await getOrInitSetting('autoStart', false)

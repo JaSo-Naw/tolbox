@@ -42,7 +42,7 @@ import {
   getSecretKey,
   getSecretKeyExpiry,
   setSecretKeyWithDefaultExpiry
-} from "@/db/modules/user.js";
+} from "@/db/settings/user.js";
 
 
 

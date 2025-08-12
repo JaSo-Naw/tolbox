@@ -11,10 +11,27 @@
 //一启动，读取数据库autostart，根据其值设置autostart
 import {invoke} from "@tauri-apps/api/core";
 
-import {getOrInitAutoStart} from "@/db/modules/autostart.js";
+import {getOrInitAutoStart} from "@/db/settings/autostart.js";
 import UpdateOverlay from "@/components/common/UpdateOverlay.vue";
 
 import ContextMenu from "@/components/common/ContextMenu.vue";
+
+import {listen} from "@tauri-apps/api/event";
+import {useRouter} from "vue-router";
+
+import {useLayoutStore} from "@/stores/index.js";
+const router = useRouter();
+const layoutStore = useLayoutStore();
+
+listen('navigate-to', ({payload}) => {
+  if (payload === 'quickOpen') {
+
+    layoutStore.setActiveSubNav('quickOpen')
+    layoutStore.setActiveNav('tool')
+    router.push("/mainLayout/quickOpen")
+  }
+})
+
 
 async function initAutostart() {
   try {

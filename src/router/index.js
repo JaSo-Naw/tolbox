@@ -23,6 +23,11 @@ const routes = [
         component: () => import('@/views/contentViews/HomeView.vue'),
       },
       {
+        path: 'quickOpen',
+        name: 'quickOpen',
+        component: () => import('@/views/contentViews/QuickOpen.vue')
+      },
+      {
         path: 'translate',
         name: 'translate',
         component: () => import('@/views/contentViews/TranslateView.vue'),
