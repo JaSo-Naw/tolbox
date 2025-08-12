@@ -1,11 +1,11 @@
 {
-  "version": "0.1.3",
-  "notes": "v0.1.3完善更新功能，提示更新信息。增加右键菜单的剪切、复制、粘贴功能。",
-  "pub_date": "2025-08-06T13:15:00+08:00",
+  "version": "0.1.4",
+  "notes": "v0.1.4增加了快速启动应用的功能",
+  "pub_date": "2025-08-13T00:35:00+08:00",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUWVFHRmVUclk1dDUxZU8yT01yMFNWdWZlWFg4Q2V6K3JjVnRDeUVEYVgxRDlyc0gxOGlyZEoreGhMbUxQZEZKUzRiMXhIYUJDOUlGaGpZRzFqUis1d000VDJkeFB6WVFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzU0NDU2NTcwCWZpbGU6dG9sYm94XzAuMS4zX3g2NF9lbi1VUy5tc2kKcTIxbU5lbmR6NWhIeDBQcnZYUExzMllyRlBwdEZ4VXVNSDZ5bjZwaC9IcEwyekRSOUtmT2VaMmppWk05azhML2VlNWZqSVdpd2FTMDk4NEUrVXFXQ2c9PQo=",
-      "url": "https://github.com/JaSo-Naw/tolbox/releases/download/v0.1.3/tolbox_0.1.3_x64_en-US.msi"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUWVFHRmVUclk1dHlVY2IrSExjR1c3VFQvS0lLNDFLTDROYlZjRi9uOVRVOU9VT0ZSSDNrVGRuSjl1YWNBc3BENGlycWR4Rzk1NGEzK2V5WFE2RjJ2VW5NN0tTZmdwNWdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzU1MDE2Mjg2CWZpbGU6dG9sYm94XzAuMS40X3g2NF9lbi1VUy5tc2kKNjlobnBIamxHSHpNcG56QnZtcUZyeFhYL243UkVXbHA0M3pFVmtkKytKWC9aMTVMV0FKZWlsYWFweWN5RkJBVlpGZm53dVh4YkxyS1llVDZkclRuQkE9PQo=",
+      "url": "https://github.com/JaSo-Naw/tolbox/releases/download/v0.1.4/tolbox_0.1.4_x64_en-US.msi"
     }
   }
 }
